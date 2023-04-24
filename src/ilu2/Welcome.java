@@ -13,15 +13,22 @@ public class Welcome {
 		}
 		else{
 			String[] noms=input.split(",");
-			if (noms.length==1){
+			int nbPersonne = noms.length;
+			
+			if (nbPersonne==1){
 				message.append("Hello, "+noms[0].substring(0, 1).toUpperCase()+ noms[0].substring(1));
 			}
-			else if (noms.length==2){
-				message.append("Hello, "+ noms[0].substring(0, 1).toUpperCase()+ noms[0].substring(1)
-						+", " +noms[1].substring(0, 1).toUpperCase()+ noms[1].substring(1));
+			else{
+				message.append("Hello");
+				for(int i=0; i < nbPersonne ;i++) {
+					message.append(", "+noms[i].substring(0, 1).toUpperCase()+ noms[i].substring(1));
+					
+				}
 			}
+			
 		}
-		return message.toString();		
+		return message.toString();
+		
 	}
 	
 	
