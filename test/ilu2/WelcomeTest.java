@@ -17,6 +17,7 @@ class WelcomeTest {
 	void testWelcomeNom() {
 		assertEquals("Hello, Bob",welcome.welcome("Bob"));
 	}
+	
 	@Test
 	void testWelcomeNullEtChainesVides(){
 		final String ACTION = "Hello, my friend";  
@@ -25,6 +26,11 @@ class WelcomeTest {
 		assertEquals(ACTION,welcome.welcome(" "));	
 	}
 	
+	@Test
+	void testWelcomeGestionCris(){
+		final String ACTION_1 = "HELLO, JERRY!";  
+		assertEquals(ACTION_1,welcome.welcome("JERRY"));
+	}
 	
 
 }
