@@ -12,12 +12,13 @@ class WelcomeTest {
 	void setUp() throws Exception {
 		welcome = new Welcome();
 	}
-
+	//EX_1
 	@Test
 	void testWelcomeNom() {
 		assertEquals("Hello, Bob",welcome.welcome("Bob"));
 	}
 	
+	//EX_2
 	@Test
 	void testWelcomeNullEtChainesVides(){
 		final String ACTION = "Hello, my friend";  
@@ -26,11 +27,19 @@ class WelcomeTest {
 		assertEquals(ACTION,welcome.welcome(" "));	
 	}
 	
+	//EX_3
 	@Test
 	void testWelcomeGestionCris(){
 		final String ACTION_1 = "HELLO, JERRY!";  
 		assertEquals(ACTION_1,welcome.welcome("JERRY"));
-	}
+	}	
 	
+	//EX_4
+	@Test
+	void testWelcomeDeuxNoms(){
+		final String ACTION_2 = "Hello, Amy, Bob";
+	    String input = "amy,bob";
+        assertEquals(ACTION_2 , Welcome.welcome(input));
+	}
 
 }
