@@ -6,11 +6,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class WelcomeTest {
-
+	private Welcome welcome;
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		welcome = new Welcome();
+	}
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testWelcomeNom() {
+		assertEquals("Hello, Bob",welcome.welcome("Bob"));
 	}
 
 }
