@@ -49,5 +49,14 @@ class WelcomeTest {
 		String input1 = "Amy,Bob,Jerry";
         assertEquals(ACTION_3 , Welcome.welcome(input1));	
 	}
+	
+	
+	//EX_6
+		@Test
+		void testWelcomePlusieursNomsCris(){
+			final String ACTION_4 = "Hello, Amy, Jerry.AND HELLO, BOB!";
+			String input1 = "Amy,BOB,Jerry";
+	        assertEquals(ACTION_4 , Welcome.welcome(input1));	
+		}
 
 }

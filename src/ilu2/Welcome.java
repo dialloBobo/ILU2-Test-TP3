@@ -1,40 +1,41 @@
 package ilu2;
 
+
 public class Welcome {
 	
 	public static String welcome(String input) {
-		StringBuilder message = new StringBuilder();
+		
 		
 		if(input==null || input.trim().isEmpty()) {
-			message.append("Hello, my friend");
+			return "Hello, my friend";
 		}
 		else if(isUpperCase(input)){
-			message.append("HELLO, "+input+ "!");
+			return"HELLO, "+input+ "!";
 		}
-		else{
-			String[] noms=input.split(",");
-			int nbPersonne = noms.length;
-			
-			if (nbPersonne==1){
-				message.append("Hello, "+noms[0].substring(0, 1).toUpperCase()+ noms[0].substring(1));
-			}
-			else{
-				message.append("Hello");
-				for(int i=0; i < nbPersonne ;i++) {
-					message.append(", "+noms[i].substring(0, 1).toUpperCase()+ noms[i].substring(1));
-					
-				}
-			}
-			
+		else {
+		String[] noms=input.split(",");
+		StringBuilder message = new StringBuilder();
+		StringBuilder messageMajuscule = new StringBuilder();
+	    for (String nom : noms) {
+	        if (isUpperCase(nom)) {
+	        	messageMajuscule.append("AND HELLO, " + nom+ "!");
+	        } 
+	        else {
+	            message.append(", "+nom.substring(0, 1).toUpperCase()+ nom.substring(1));
+	
+	        }
+	    }
+		message.replace(0, 2, "Hello, ");
+	    if (messageMajuscule.length() > 0) {
+	        message.append(".");
+	    }
+	    message.append(messageMajuscule);
+	    return message.toString();
 		}
-		return message.toString();
-		
 	}
-	
-	
-	
-	private static boolean isUpperCase(String input){
-		return input.equals(input.toUpperCase());
+
+	private static boolean isUpperCase(String input) {
+		 return input.equals(input.toUpperCase());
 	}
 
 }
