@@ -17,5 +17,14 @@ class WelcomeTest {
 	void testWelcomeNom() {
 		assertEquals("Hello, Bob",welcome.welcome("Bob"));
 	}
+	@Test
+	void testWelcomeNullEtChainesVides(){
+		final String ACTION = "Hello, my friend";  
+		assertEquals(ACTION,welcome.welcome(null));
+		assertEquals(ACTION,welcome.welcome(""));
+		assertEquals(ACTION,welcome.welcome(" "));	
+	}
+	
+	
 
 }
