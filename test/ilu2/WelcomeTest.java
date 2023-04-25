@@ -65,6 +65,12 @@ class WelcomeTest {
 	    assertEquals("Hello, Bob, Amy and Jerry" , Welcome.welcome("bob,amy,jerry"));
 	    assertEquals("Hello, Bob and Jerry.AND HELLO AMY AND JACK!" , Welcome.welcome("bob,AMY,jerry,JACK"));
 	}
-		
+	
+	//EX_8
+	@Test
+	void testWelcomeSupprimerEspaceInutile(){
+	    assertEquals("Hello, Bob and Amy" , Welcome.welcome("bob   ,amy,  "));
+	    
+	}
 		
 }

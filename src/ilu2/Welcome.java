@@ -10,7 +10,7 @@ public class Welcome {
         } else if (isUpperCase(input)) {
             return "HELLO, " + input + "!";
         } else {
-            String[] noms = input.split(",");
+            String[] noms = input.split("\\s*,\\s*"); 
             List<String> tableauxNomsNormaux = new ArrayList<>();
             List<String> tableauxNomsMajuscules = new ArrayList<>();
             for (String name : noms) {
