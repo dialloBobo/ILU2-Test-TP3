@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class WelcomeTest {
+	private static final Object ACTION_6 = null;
 	private Welcome welcome;
 	
 	@BeforeEach
@@ -37,7 +38,7 @@ class WelcomeTest {
 	//EX_4
 	@Test
 	void testWelcomeDeuxNoms(){
-		final String ACTION_2 = "Hello, Amy, Bob";
+		final String ACTION_2 = "Hello, Amy and Bob";
 	    String input = "amy,bob";
         assertEquals(ACTION_2 , Welcome.welcome(input));
 	}
@@ -45,18 +46,25 @@ class WelcomeTest {
 	//EX_5
 	@Test
 	void testWelcomePlusieursNoms(){
-		final String ACTION_3 = "Hello, Amy, Bob, Jerry";
-		String input1 = "Amy,Bob,Jerry";
+		final String ACTION_3 = "Hello, Amy, Bob and Jerry";
+		String input1 = "Amy,bob,jerry";
         assertEquals(ACTION_3 , Welcome.welcome(input1));	
 	}
 	
 	
 	//EX_6
-		@Test
-		void testWelcomePlusieursNomsCris(){
-			final String ACTION_4 = "Hello, Amy, Jerry.AND HELLO, BOB!";
-			String input1 = "Amy,BOB,Jerry";
-	        assertEquals(ACTION_4 , Welcome.welcome(input1));	
-		}
-
+	@Test
+	void testWelcomePlusieursNomsCris(){
+		final String ACTION_4 = "Hello, Amy and Jerry.AND HELLO BOB!";
+		String input1 = "Amy,BOB,Jerry";
+	    assertEquals(ACTION_4 , Welcome.welcome(input1));	
+	}
+	//EX_7
+	@Test
+	void testWelcomePlusieursNomsAND(){
+	    assertEquals("Hello, Bob, Amy and Jerry" , Welcome.welcome("bob,amy,jerry"));
+	    assertEquals("Hello, Bob and Jerry.AND HELLO AMY AND JACK!" , Welcome.welcome("bob,AMY,jerry,JACK"));
+	}
+		
+		
 }
