@@ -55,7 +55,7 @@ class WelcomeTest {
 	//EX_6
 	@Test
 	void testWelcomePlusieursNomsCris(){
-		final String ACTION_4 = "Hello, Amy and Jerry.AND HELLO BOB!";
+		final String ACTION_4 = "Hello, Amy and Jerry.AND HELLO BOB (x1)";
 		String input1 = "Amy,BOB,Jerry";
 	    assertEquals(ACTION_4 , Welcome.welcome(input1));	
 	}
@@ -63,7 +63,7 @@ class WelcomeTest {
 	@Test
 	void testWelcomePlusieursNomsAND(){
 	    assertEquals("Hello, Bob, Amy and Jerry" , Welcome.welcome("bob,amy,jerry"));
-	    assertEquals("Hello, Bob and Jerry.AND HELLO AMY AND JACK!" , Welcome.welcome("bob,AMY,jerry,JACK"));
+	    assertEquals("Hello, Bob and Jerry.AND HELLO AMY (x1) AND JACK (x1)" , Welcome.welcome("bob,AMY,jerry,JACK"));
 	}
 	
 	//EX_8
@@ -72,5 +72,15 @@ class WelcomeTest {
 	    assertEquals("Hello, Bob and Amy" , Welcome.welcome("bob   ,amy,  "));
 	    
 	}
-		
+	
+	
+	//EX_9
+	@Test
+	void testWelcomeNombreApparition(){
+		String input="bob, JERRY, amy, bob, JERRY, bob";
+	    assertEquals("Hello, Bob (x3) and Amy.AND HELLO JERRY (x2)" , Welcome.welcome(input));
+	    
+	}
+	
+
 }
