@@ -82,5 +82,14 @@ class WelcomeTest {
 	    
 	}
 	
-
+	
+	//EX_10
+	@Test
+	void testWelcomeNomYoda(){
+		String input1="bob, Yoda, amy, JERRY";
+		assertEquals("Bob, Yoda and Amy, Hello.AND HELLO JERRY (x1)" , Welcome.welcome(input1));
+		String input2="bob, YODA,amy,JERRY,YODA";
+		assertEquals("Hello, Bob and Amy.AND YODA (x2) AND JERRY (x1) HELLO!" , Welcome.welcome(input2));
+	    
+	}
 }
